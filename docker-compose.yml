@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  schuss-app:
+    container_name: schuss_website
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      # Change le premier 3000 si le port est déjà pris sur ton serveur (ex: "8080:3000")
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - schuss_network
+
+networks:
+  schuss_network:
+    driver: bridge
