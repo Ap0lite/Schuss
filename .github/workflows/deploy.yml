@@ -37,5 +37,4 @@ jobs:
           # On utilise maintenant la variable IMAGE_TAG qui contient tout en minuscules
           tags: ${{ env.IMAGE_TAG }}
           labels: |
-            org.opencontainers.image.source=https://github.com/${{ github.repository }
-            
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
